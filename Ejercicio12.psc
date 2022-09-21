@@ -3,15 +3,23 @@ Algoritmo Ejercicio12
 	// 20 y 230, ambos inclusive
 	
 	
-	Definir num1 Como Entero
-	Escribir 'Estas son las potencias de 2 entre 20 y 230, ambos inclsuive'
-	i <- 2
+	Definir i Como Entero
+	Escribir 'Estas son las potencias de 2 entre 20 y 230, ambos inclusive'
+	i <- 1
 	
-	Mientras i<=231 Hacer
-		Escribir i
-		i <- i*2
+	
+	Repetir
+		Si i>20 y i<230 Entonces
+			escribir i 
+		FinSi
 		
-	FinMientras
-	escribir i
+		i=i*2
+	Hasta Que i>230
 	
+	
+	
+		
+
+	
+
 FinAlgoritmo
