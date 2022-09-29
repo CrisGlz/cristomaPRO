@@ -6,12 +6,16 @@ Algoritmo ejercicio15
 	
 	//Listamos el contenido del array
 	
+	
+	Definir almacen Como Entero
 	Dimension almacen[7]
 	
+	
 	Escribir "Vamos a calcular la media de 7 numeros"
+	
 	Para i<-0 hasta 6 con paso 1 Hacer
-		Escribir "Dame el ", i+1 "º numero"
-		leer almacen[i]
+		Escribir "Dame el numero de la poscicion " i+1
+		Leer almacen[i]
 
 	FinPara
 	
@@ -21,6 +25,29 @@ Algoritmo ejercicio15
 	Fin Para
 	media = suma/7
 	
+	
+	
+	minimo=almacen[0]
+	Para i=0 hasta 6 con paso 1 Hacer
+		si minimo > almacen[i] Entonces
+			minimo= almacen[i]
+		FinSi
+	FinPara
+	
+	
+	
+	maximo=almacen[0]
+	Para i=0 hasta 6 con paso 1 Hacer
+		si maximo < almacen[i] Entonces
+			maximo= almacen[i]
+		FinSi
+	FinPara
+
+	
+	
+	
 	Escribir "La media resultando es: ", media;
+	escribir "El minimo resultado es: ", minimo;
+	escribir "El maximo resultado es: ", maximo;
 	
 FinAlgoritmo
