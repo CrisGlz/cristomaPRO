@@ -1,10 +1,11 @@
-//Práctica 16: Mostrar usando un array los dos números mayores de 10 números 
+//Práctica 17 Modificar el anterior para que sirva con cualquier cantidad de números 
+//mayores que se quiera tener guardados
 
 //introducidos por teclado
 
 
-Algoritmo Ejercicio16
-	Dimension datos[11];
+Algoritmo Ejercicio17
+	Dimension datos[11]; //He reciclado el ejercicio 16 pero no se como poner aqui para que sirva con cualquier numero deseado
 	Escribir "Ingrese la cantidad de numeros:";
 	Leer n;
 	Para i<-1 Hasta n Hacer

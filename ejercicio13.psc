@@ -1,6 +1,9 @@
 Algoritmo ejercicio13
 	
-	
+	//Queremos hacer un algoritmo que calcule el factorial de un número entero 
+	//positivo. El factorial de n se denota con n!, pero no existe ningún operador que permita 
+	//efectuar este cálculo directamente. Sabiendo que n! = 1 · 2 · 3 · . . . · (n ? 1) · n y que 0! = 1,
+	//haz un algoritmo que pida el valor de n y muestre por pantalla el resultado de calcular n!.
 	
 	definir num1,num2,num3,num4,num5 Como Entero
 	definir distancia12, distancia13, distancia14, distancia15 como entero

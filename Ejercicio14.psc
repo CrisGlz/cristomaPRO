@@ -1,40 +1,52 @@
 
-funcion restocomb = combinacion(m,n)
-	restocomb= factorial(n) / (factorial(m) * factorial(n-m))
+
+//Práctica 14: Usando el código anterior como una función desarrollar el siguiente programa:
+//El número de combinaciones que podemos formar tomando m elementos de un conjunto 
+//con n elementos es: C(m,n) = n! / (n ? m)!m! . Diseña un algoritmo que pida el valor de n y 
+//m y calcule Cm n . (Ten en cuenta que n ha de ser mayor o igual que m.) (Puedes 
+//comprobar la validez de tu programa introduciendo los valores n = 15 y m = 10: el 
+//resultado es 3003.
+
+
+
+Funcion combo = combinacion(n,m) //funcion de combinacion
+	combo = FactorialNumero(n)/(FactorialNumero(m)*FactorialNumero(n-m))
+FinFuncion
+
+
+
+Funcion  Factorial=FactorialNumero(n) //funcion factorial
+	
+	Factorial=1
+	Si n = 0 Entonces
+		n=1
+	SiNo
+		Para i=1 hasta n Con Paso 1 Hacer
+			Factorial = Factorial * i
+		FinPara
+	FinSi
+
 FinFuncion
 
 
 
 
-funcion j=factorial(n)
+
+Algoritmo Practica14
 	
-	leer num;
-	j=1
-	Para i=1 Hasta num Con Paso 1;
-		j=j*i;
+	Definir n ,  num1 , num2 , Factorial , i Como Entero
+	
+	Escribir "Ingrese el primer numero que quiere"
+	Leer num1
+	Escribir "Ingrese el primer segundo que quiere"
+	Leer num2
+	Si n<m Entonces
+		Escribir"El primer numero tiene que ser mayor al segundo"
+	SiNo
 		
-	FinPara;
 	
-FinFuncion
-
-
-	
-
-
-Algoritmo practica14
-	
-	escribir "CAlculemos la combinacion de dos numeros";
-	definir num1, num2 Como Entero
-	
-	Repetir
-		escribir "Introduzcamos el primer num"
-		leer num1
-		escribir "Introduzcamos el segundo num"
-		leer num2
-	Hasta Que num1>num2
-	
-	escribir "El resultado es " restocomb
-	
+FinSi
+	Escribir "El factorial del numero " n " es: " combinacion(num1 , num2)
 	
 	
 	
