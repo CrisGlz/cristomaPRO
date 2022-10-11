@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dossier2;
-
+import java.util.Scanner;
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
@@ -25,12 +25,14 @@ public class Practica28 {
             suma += numeroIntroducido;
             System.out.println("Introduce un num");
             numeroIntroducido = sc.nextInt();
-            int numNegativo = numeroIntroducido < 0 ? numeroIntroducido : 0;
-            int numPositivo = numeroIntroducido < 0 ? numeroIntroducido : 0;
+            int numNegativo = (numeroIntroducido < 0) ? numeroIntroducido : 0;
+            int numPositivo = (numeroIntroducido < 0) ? numeroIntroducido : 0;
 
             sumaPositivo += numPositivo;
             sumaNegativo += numNegativo;
             
+            
         }
+        System.out.println("La suma negativa es: "+sumaNegativo+" Suma positiva es: "+sumaPositivo);
     }
 }

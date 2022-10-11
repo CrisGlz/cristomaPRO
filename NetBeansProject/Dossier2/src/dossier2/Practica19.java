@@ -17,9 +17,9 @@ public class Practica19 {
         Scanner cin = new Scanner(System.in);
         System.out.println("¿Introduce los grados en Fahrenheit");
         int fahrenheit = cin.nextInt();
-        double pagaTotal = numero*18;
+        double pagaTotal = fahrenheit*18;
         
-        System.out.println("Has cobrado: "+pagaTotal);
+        System.out.println("Los grados en Cº: "+pagaTotal+"cº");
         
              
     }

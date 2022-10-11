@@ -4,30 +4,35 @@
  */
 package dossier2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
-public class Practica24 {
+public class Practica25 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Dame una letra para saber tu idioma");
-        System.out.println("c(castellano), i(ingles), f(frances)");
+        System.out.println("Te dire si tu letra es una Vocal");
+        System.out.println("Acuerdate a,e,i,o,u");
         String texto = sc.nextLine();
 
         switch (texto) {
-            case "c":
-                System.out.println("Buenos dias");
-                break;
+            case "a":
+            case "A":
+            case "e":
+            case "E":
             case "i":
-                System.out.println("Good morning");
-                break;
-            case "f":
-                System.out.println("Bonjour");
+            case "I":
+            case "o":
+            case "O":
+            case "u":
+            case "U":
+                System.out.println("¡Es una vocal!");
                 break;
             default:
-                System.out.println("No entiendo tu idioma");
+                System.out.println("No es una vocal");
         }
     }
 
