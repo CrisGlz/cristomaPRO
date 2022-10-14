@@ -11,22 +11,31 @@ import java.util.Scanner;
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Practica36 {
-    
+
+    @SuppressWarnings({"empty-statement", "empty-statement"})
     public static void main(String[] args) {
+
+        int tirada;
+        int suma = 0;
+        String caracter = null;
+
+        System.out.print("Tirada de tres dados: ");
+        Scanner sc = new Scanner(System.in);
+
+        while (!"f".equals(caracter) && !"F".equals(caracter)) {
+            System.out.println("\n-----------------------------------------");
+            System.out.println("\nPulsa f/F para parar o cualquier otra tecla para Continaur.");
+            System.out.println("\n-----------------------------------------");
         
-    int tirada;
-    int suma = 0;
-            
-    System.out.print("Tirada de tres dados: ");
-    
-       
-    for(int i = 0; i < 3; i++) {
-      tirada = (int)(Math.random() * 6) + 1;
-      System.out.print(tirada + " ");
-      suma += tirada;
-      
+        caracter = sc.nextLine();
+
+        for (int i = 0; i < 3; i++) {
+            tirada = (int) (Math.random() * 6) + 1;
+            System.out.print(tirada + " ");
+            suma += tirada;
+        }
+        }
+
+        System.out.println("\nSuma: " + suma);
     }
-     
-    System.out.println("\nSuma: " + suma);
-  }
 }
