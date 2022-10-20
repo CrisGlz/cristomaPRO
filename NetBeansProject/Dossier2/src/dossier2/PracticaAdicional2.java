@@ -12,7 +12,7 @@ public class PracticaAdicional2 {
     public static void main(String[] args) {
        
         char letra;
-        int size = 5;
+        int size = 15;
         System.out.println("Te voy a generar una contraseña:");
         String password = " ";
         for(int i =0; i <size; i++){

@@ -23,17 +23,16 @@ public class Practica36 {
         Scanner sc = new Scanner(System.in);
 
         while (!"f".equals(caracter) && !"F".equals(caracter)) {
+
+            for (int i = 0; i < 3; i++) {
+                tirada = (int) (Math.random() * 6) + 1;
+                System.out.print(tirada + " ");
+                suma += tirada;
+            }
             System.out.println("\n-----------------------------------------");
             System.out.println("\nPulsa f/F para parar o cualquier otra tecla para Continaur.");
             System.out.println("\n-----------------------------------------");
-        
-        caracter = sc.nextLine();
-
-        for (int i = 0; i < 3; i++) {
-            tirada = (int) (Math.random() * 6) + 1;
-            System.out.print(tirada + " ");
-            suma += tirada;
-        }
+            caracter = sc.nextLine();
         }
 
         System.out.println("\nSuma: " + suma);
