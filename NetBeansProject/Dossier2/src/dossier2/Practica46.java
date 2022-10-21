@@ -9,31 +9,25 @@ import java.util.Scanner;
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Practica46 {
- 
+
     public static void main(String[] args) {
-       
 
-        int numero, exp, digito;
-        double binario;
-        Scanner sc = new Scanner(System.in);
 
-        do{ 
-            System.out.print("Introduce un numero entero >= 0: ");                                                
-            numero = sc.nextInt();
-        }while(numero < 0);
+        Scanner lecturaDatos = new Scanner(System.in);
+        System.out.println("Ingresa un numero decimal");
 
-        exp=0;
-        binario=0;
-        while(numero!=0){
-                digito = numero % 2;           
-                binario = binario + digito * Math.pow(10, exp);                                                   
-                exp++;
-                numero = numero/2;
+        int numerodecimal =lecturaDatos.nextInt();
+        int auxiliar = numerodecimal;
+        String binario="";
+
+        while (auxiliar >0){
+            binario = auxiliar %2 + binario;
+            auxiliar /=2;
         }
-        System.out.printf("Binario: %.0f %n", binario);
+        System.out.println("El numero decimal "+numerodecimal+" en binario es: "+binario);
     }
 }
-        
-    
-    
+
+
+
 
