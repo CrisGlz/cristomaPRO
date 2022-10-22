@@ -4,24 +4,32 @@
  */
 package dossier2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Practica40 {
     
-    public static void main(String[] args) {
-       
-        int cifras=0, num. aux=1;
-        Scanner sc = new Scanner (System.in);
-        
-        System.out.println("Dame un numero y te dire cuantas cifras tiene");
-        num = sc.nextInt();
-        aux = num;
-        for (int 1=1 Math.abs(aux) > 0; cifras++, aux /=10);
-        
-        System.out.println("EL numero "+num+" tiene "+(cifras)+" cifras.";
-        
-    }
     
+   public static void main(String[] args) {
+        Scanner teclado=new Scanner(System.in);
+        int valor;
+        do {
+            System.out.print("Ingrese un valor entre 0 y 999 (0 finaliza):");
+            valor=teclado.nextInt();
+            if (valor>=100) {
+                System.out.println("Tiene 3 dígitos.");
+            } else {
+                if (valor>=10) {
+                    System.out.println("Tiene 2 dígitos.");
+                } else {
+                    System.out.println("Tiene 1 dígito.");
+                }
+            }
+        } while (valor!=0);
+    }
 }
+    
+

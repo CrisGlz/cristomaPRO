@@ -4,6 +4,7 @@
  */
 package dossier2;
 
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,41 +12,24 @@ import javax.swing.JOptionPane;
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Practica33 {
+
     public static void main(String[] args) {
-        
-        String clave="rojo";
+        Scanner sc = new Scanner(System.in);
 
-        String pass="";
-
-        int intentos = 0;
-
-        while (clave.equals(pass)==false && intentos < 3) {
-
-            pass=JOptionPane.showInputDialog("Introduce la contraseña");
-
-            intentos++;
-
-            if (clave.equals(pass)==false) {
-
-                System.out.println("Contraseña incorrecta. Intente nuevamente");
-
+        int intentos = 3;
+        boolean acierto = false;
+        while (acierto != true && intentos != 0) {
+            System.out.println("Ingrese el codigo");
+            int codigousuario = sc.nextInt();
+            if (codigousuario == 1234) {
+                System.out.println("Has Acertado");
+                acierto = true;
             } else {
-
-                System.out.println("Acceso Correcto");
-
+                System.out.println("has falllado vuelve a intentarlo");
             }
-
- 
-
-            if (intentos == 3) {
-
-                System.out.println("Por favor intente mas tarde");
-
-            }
+            intentos--;
 
         }
-
- 
 
     }
 }

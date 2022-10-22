@@ -4,6 +4,8 @@
  */
 package dossier2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
