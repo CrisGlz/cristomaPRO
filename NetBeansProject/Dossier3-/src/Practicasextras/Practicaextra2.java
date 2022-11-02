@@ -4,6 +4,8 @@
  */
 package Practicasextras;
 
+import java.util.Random;
+
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
@@ -13,16 +15,21 @@ public class Practicaextra2 {
     public static void main(String[] args) {
 
 
-     
+        Random rnd= new Random();
         String nombres[] = { "Inés", "Ana", "Jaime", "Miguel","Alfredo"};
-        System.out.println(nombres[4]+" "+nombres[5]);
-
         
+        int i= 0;
+        
+        while(i < 2000){
+            
+        int x = 0 + rnd.nextInt(nombres.length);
+        int y = 0 + rnd.nextInt(nombres.length);
+        System.out.println(nombres[x] + " y " + nombres[y]);
+        i++;
+        }
             
         }
-        
-        
-        
+
     }
 
 
