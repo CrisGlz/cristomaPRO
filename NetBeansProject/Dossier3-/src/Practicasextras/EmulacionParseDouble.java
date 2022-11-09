@@ -5,59 +5,52 @@
  */
 package Practicasextras;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Cris
  */
 public class EmulacionParseDouble {
     
-    public static void main(String[] args) {
+          
+public static double nuestroParsedouble(String strNumero) throws NumberFormatException{
+       
+        double parseDouble = 0;
+        int posicionSigno = -1;
+        int signo = 1;
+        if( strNumero.charAt(0)=='-')
+            posicionSigno = 0;
+        signo = -1;
         
-    
-    public static int outParseInt(String strNumero){
-        
-
-        int parseInt = 0;
-        
-        for (int i = 0; i < strNumero.length(); i++) {
-            char charAt = strNumero.charAt(i);
-            int digito = charAt - '0';
-            if(digito >9 || digito < 0){
-                throw new NumberFormatException(charAt);
+        for (int i = posicionSigno + 1; i < strNumero.length(); i++) {
+           char charAt = strNumero.charAt(i);
+            //System.out.println(charAt);
+            double digito = charAt - '0';
+            if (digito > 9 ||digito < 0) {
+               // throw new NumberFormatException("El caracter: " + charAt + " no es un digito");
+                System.out.println(digito);
             }
-            parseInt *= 10;
-            parseInt += digito;
-            
+           // System.out.println(digito);
+           parseDouble /=10; 
+           parseDouble += digito; 
+           //234
         }
-        return parseInt;
+        return parseDouble;
+        
+    }
     
-            
-        }
-            
-        
-        
-}
+    
+    
     
     
     
     public static void main(String[] args) {
+        
     
-        
-   String numString;
-   int     
-        
     Scanner sc = new Scanner(System.in);
-    System.out.println("Dame un numero y te lo devuevlo multiplicado");
-    numString = sc.nextLine();
-    numInt = outParseInt(numero);
-    
-    }
-
-    
-    
+        System.out.println("Ingrese un numero en string y lo convertire en int");
+        String numStr = sc.nextLine();
+        System.out.println("Tu numero es: " + nuestroParsedouble(numStr));
 }
-        
-    }
-    
-    
 }
