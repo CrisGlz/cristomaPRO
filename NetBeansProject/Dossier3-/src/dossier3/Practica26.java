@@ -10,17 +10,16 @@ import java.util.Scanner;
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
-public class Practica25 {
+public class Practica26 {
     
-    
-    public static int sumarValores(int array[], int posArray) {
+        public static int sumarValores(int array[], int posArray) {
         int tam = posArray;
         int suma;
       
         if (tam == 0) {
             return array[tam];
         } else {
-            suma = (array[tam]) + sumarValores(array, tam - 1);
+            suma = (array[tam]) * sumarValores(array, tam - 1);
 
         }
         return suma;
@@ -42,4 +41,6 @@ public class Practica25 {
     }
     
     
-
+    
+    
+}

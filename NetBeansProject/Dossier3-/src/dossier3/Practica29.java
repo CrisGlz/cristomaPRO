@@ -4,30 +4,32 @@
  */
 package dossier3;
 
+
 import java.util.Scanner;
 
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
-public class Practica25 {
+public class Practica29 {
     
-    
-    public static int sumarValores(int array[], int posArray) {
-        int tam = posArray;
-        int suma;
-      
-        if (tam == 0) {
-            return array[tam];
-        } else {
-            suma = (array[tam]) + sumarValores(array, tam - 1);
+public static int Max(int[] array, int i, int j) {
+    int med, max_left, max_right;
+    if (i == j)
+        return array[i];
+    else
+        med = (i + j) / 2;
+    max_left = Max(array, i, med);
+    max_right = Max(array, med + 1, j);
+    if (max_left > max_right)
+        return max_left;
+    else
+        return max_right;
+}
 
-        }
-        return suma;
-    }
+}
 
-    
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Cuantos numeros quiere ingresar? en el Array");
@@ -37,9 +39,8 @@ public class Practica25 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(sumarValores(arr, arr.length - 1));
-    }
-    }
-    
-    
 
+    }
+    
+    
+}
