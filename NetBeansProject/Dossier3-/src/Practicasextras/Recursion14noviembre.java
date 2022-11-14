@@ -2,18 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dossier3;
-
-
-import java.util.Scanner;
+package Practicasextras;
 
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
-public class Practica29 {
+public class Recursion14noviembre {
     
-public static int menorRecursion(int array[], int pos){
+    public static int menorRecursion(int array[], int pos){
         
         int resultado;
         if( pos >= array.length -1){
@@ -48,3 +45,6 @@ public static int menorRecursion(int array[], int pos){
         
     }
 }
+
+
+        
