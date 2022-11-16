@@ -15,7 +15,7 @@ public class Anexo2 {
        if(b==0)
            return a;
        else
-           return mcd(b, a % b);
+           return mcd(b, a % b);//no se continuar
    }
 }
         
