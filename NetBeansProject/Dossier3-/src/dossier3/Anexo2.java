@@ -4,22 +4,38 @@
  */
 package dossier3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Anexo2 {
-   
-    public static int mcd(int n,int b, int a){
-        
-       if(b==0)
-           return a;
+   //MINIMO COMUN DIVISOR
+    public static int mcd(int num1, int num2){
+       int resultado;
+       if(num2==0)
+           return num1;
        else
-           return mcd(b, a % b);//no se continuar
+           resultado = mcd(num2, num1%num2);
+       return resultado;
    }
-}
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce dos numeros para saber su MCD media");
+        System.out.println("Numero 1: ");
+        int num1 = sc.nextInt();
+        System.out.println("Numero 2: ");
+        int num2 = sc.nextInt();
+        System.out.println("El MCD de "+num1+" y "+ num2+" es "+ mcd(num1,num2));
+        
         
     }
     
-            
+    
 }
+
+
+        
+    
