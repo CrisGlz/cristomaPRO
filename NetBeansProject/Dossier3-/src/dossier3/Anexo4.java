@@ -13,23 +13,47 @@ import java.util.Scanner;
 public class Anexo4 {
     
     
-    static int[] acertarNumero(int num, int array[]){
         
-        boolean resultado = false;
-        
-        int mitad = (0+array.length-1)/2;
-        int tamanioArray = array.length;
-        if ( num < mitad        
-        
+public int buscar(int[] números, int número) {
+
+    return buscar(números, número, 0, números.length);
+}
+
+public int buscar(int[] números, int número, int inicio, int fin) {
+
+    int centro = (inicio + fin) / 2;
+
+    if (fin < inicio) {
+         return -1;
     }
+
+    if (número < números[centro]) {
+        return buscar(números, número, inicio, centro - 1);
+    }
+
+    if (número > números[centro]) {
+        return buscar(números, número, centro + 1, fin);
+    }
+
+    if (número == números[centro]) {
+        return centro;
+    }
+
+    return -1;
+}
+   
+        
     
-    public static void main(String[] args) {
+   
        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Dime un numero a ver si esta");
-        int num1 = sc.nextInt();
-        
-        int array[] = {2,4,10,7,1,30};
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int pos = busca.buscar(numeros, 8);
+        if (pos > -1) {
+            System.out.println("Encontrado en la posicion: " + pos);
+        } else {
+            System.out.println("Error");
+        }
     }
-    
 }
