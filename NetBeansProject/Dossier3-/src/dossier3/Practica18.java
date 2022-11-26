@@ -6,6 +6,7 @@ package dossier3;
 
 import static dossier3.Practicaadicional1.mostrarArray;
 import static dossier3.Practicaadicional1.ordenarArray;
+import java.util.Scanner;
 
 /**
  *
@@ -13,59 +14,63 @@ import static dossier3.Practicaadicional1.ordenarArray;
  */
 public class Practica18 {
     
-        public static void mostrarArray(int array[]){
-        
-        System.out.print("|");
+   public static void mostrarArray(int array[]) {
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " | ");
-            
+            System.out.print(array[i] + " ");
         }
         System.out.println("");
-
     }
     
-        public static int[] ordenarArray(int array[]){
-        int aux ;
-        for (int i = 0; i < array.length; i++) {
-
-            for (int j = 1; j < (array.length - i); j++) {
-                if (array[j - 1] > array[j]) {
-                    aux = array[j - 1];
-                    array[j - 1] = array[j];
-                    array[j] = aux;
-
+    public static void numerosCercanos(int[] array) {
+        int menor = (int)Math.abs(array[0] - array[1]); 
+        int resta;
+        int posicion = 0;
+        
+        for (int i = 1; i < array.length - 1; i++) {
+            resta = (int)Math.abs(array[i] - array[i + 1]);
+            if (resta < menor) {
+                menor = resta;
+                posicion = i;
             }
-
         }
+        System.out.println("Los números más cercanos son: " + array[posicion] + " y " + array[posicion + 1]);
+    }
 
+    public static int[] ordenarArray(int[] array) {
+        int aux;
+        boolean repetirproceso = true;
+        for (int i = 0; i < array.length - 1 && repetirproceso; i++) {
+            repetirproceso = false;
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j + 1] < array[j]) {
+                    aux = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = aux;
+                    repetirproceso = true;
+                }
+            }
         }
         return array;
     }
-        
-public static int masCercano(int array[]) { 
-  int menorDistanciaActual = Math.abs(num - numeros[0]); // Aca guardas la resta
-  int posicionNumeroMasCercano = 0; // Si viene un array con un elemento, es el [0]
 
-  // Empezas en 1, porque ya sabes que el 0 es el mas cercano hasta ahora.
-  for (int i = 1; i < numeros.length; i++) {
-    int distanciaEntreNumeros = Math.abs(num - numeros[i]);
-
-    if (distanciaEntreNumeros < menorDistanciaActual) {
-      menorDistanciaActual = distanciaEntreNumeros;
-      posicionNumeroMasCercano = i;
+    public static int[] generarArray(int size, int limInf, int limSup) {
+        int array[] = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            int aleatorio = (int) (Math.random() * (limSup - limInf + 1) + limInf);
+            array[i] = aleatorio;
+        }
+        return array;
     }
-  }
 
-  return numeros[posicionNumeroMasCercano];
-}
-
-        
-    
     public static void main(String[] args) {
-        int array[]={14, 11, 2, 10, 17};
-
-
-        masCercano(array);
-}
-    
+        Scanner sc = new Scanner(System.in);
+        int array[] = new int[5];
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Introduce el " + (i + 1) + "º número");
+            array[i] = sc.nextInt();
+        }
+        numerosCercanos(array);
+        
+      
+    }
 }

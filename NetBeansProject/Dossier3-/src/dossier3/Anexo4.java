@@ -12,48 +12,50 @@ import java.util.Scanner;
  */
 public class Anexo4 {
     
-    
-        
-public int buscar(int[] números, int número) {
-
-    return buscar(números, número, 0, números.length);
-}
-
-public int buscar(int[] números, int número, int inicio, int fin) {
-
-    int centro = (inicio + fin) / 2;
-
-    if (fin < inicio) {
-         return -1;
-    }
-
-    if (número < números[centro]) {
-        return buscar(números, número, inicio, centro - 1);
-    }
-
-    if (número > números[centro]) {
-        return buscar(números, número, centro + 1, fin);
-    }
-
-    if (número == números[centro]) {
-        return centro;
-    }
-
-    return -1;
-}
-   
-        
-    
-   
-       
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int pos = busca.buscar(numeros, 8);
-        if (pos > -1) {
-            System.out.println("Encontrado en la posicion: " + pos);
-        } else {
-            System.out.println("Error");
+ 
+    public static int[] subArray (int[] array, int min, int max) {
+        int subArray[] = new int[max - min];
+        for (int i = 0; i < subArray.length; i++) {
+            subArray[i] = array[i + min];
+            
         }
+        return subArray;
+    }
+    
+    public static boolean comprobarNumero(int[] array, int num) {
+        boolean resultado = false;
+        if (num == array[0]) {
+            resultado = true;
+        } else if (array.length > 1) {
+            int mitadArray = Math.round(array.length / 2);
+            if (num < array[mitadArray]) {
+                resultado = comprobarNumero(subArray(array, 0, mitadArray), num);
+            }
+        }
+        return resultado;
+    }
+    
+    
+    /*
+    public static boolean busquedaRecursiva(int[] array, int posicion) {
+        int resultado;
+        int posMinima = 0;
+        int posMaxima = array.length - 1;
+        if (posicion == array.length - 1) {
+            resultado = array[posicion];
+        } else if (posMinima > posicion){
+            posMinima = posicion;
+        } else {
+            
+        }
+    }
+    */
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] array = {3, 7, 11, 23, 44};
+        System.out.println("Introduce tu número");
+        int num = sc.nextInt();
+        System.out.println(comprobarNumero(array, num));
     }
 }

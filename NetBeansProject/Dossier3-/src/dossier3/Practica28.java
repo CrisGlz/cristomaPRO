@@ -12,26 +12,19 @@ import java.util.Scanner;
  */
 public class Practica28 {
     
-    static int sellazo(int num){
-        
-       String resultado = "";
-       if (num ==12){
-            resultado = "4 4 4";
-    }else if (num ==13){
-            resultado = "4 4 5";
-    }else if (num ==14){
-            
-            
-       
-           
-       }
+     public static int noSeMeOcurreNombre(int valor) {
+        int resultado = 0;
+        if (valor <= 1) {
+            resultado = valor;
+        } else {
+            resultado = noSeMeOcurreNombre(valor - 5) + '5';
+        }
+        return resultado;
     }
-    
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
-        System.out.println("Ingrese el dinero que cuesta la carta");
-        int num = sc.nextInt();
+        for (int i = 0; i < 10; i++) {
+            
+        }
     }
-    
 }

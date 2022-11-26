@@ -12,28 +12,27 @@ import java.util.Scanner;
  */
 public class Practica6 {
  
-        static int factorial(double numero) {
-        if (numero == 0) {
-            return 1;
-        } else {
-            return (int) (numero * factorial(numero - 1));
+ static double combinacion(int n, int r) {
+        double resultado = factorial(n) / (factorial(n-r) * factorial(r));
+        return resultado;
+    }
+    
+    static double factorial(int numero1) {
+        double resultado = 1;
+        for (int i = 1; i <= numero1; i++) {
+            System.out.println(i);
+            resultado *= i;
         }
+        return resultado;
     }
 
-
-public static void main(String[] args) {
-       
-        Scanner sc = new Scanner (System.in);      
-        System.out.println("Dime el numeor del cual quieres obtener le factorial");
-        int numero = sc.nextInt();
-        System.out.println("EL factorial es: "+ factorial(double numero));
-    }
-}
-    
-    
-    
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el primer número de la combinatoria");
+        int numero = sc.nextInt();
+        System.out.println("Introduce el segundo número");
+        int numero1 = sc.nextInt();
         
+        System.out.println(combinacion(numero, numero1));
     }
-    
 }

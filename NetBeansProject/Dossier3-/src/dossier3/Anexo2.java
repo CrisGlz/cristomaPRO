@@ -11,30 +11,42 @@ import java.util.Scanner;
  * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
  */
 public class Anexo2 {
-   //MINIMO COMUN DIVISOR
-    public static int mcd(int num1, int num2){
-       int resultado;
-       if(num2==0)
-           return num1;
-       else
-           resultado = mcd(num2, num1%num2);
-       return resultado;
-   }
-    public static void main(String[] args) {
+    
+   public static int mcdConRecursividad(int num1, int num2) {
+        int resultado;
         
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce dos numeros para saber su MCD media");
-        System.out.println("Numero 1: ");
-        int num1 = sc.nextInt();
-        System.out.println("Numero 2: ");
-        int num2 = sc.nextInt();
-        System.out.println("El MCD de "+num1+" y "+ num2+" es "+ mcd(num1,num2));
+        if (num2 == 0) {
+            resultado = num1;
+        } else {
+            resultado = mcdConRecursividad(num1, num2 % num2);
+        }
+        return resultado;
         
-        
+        /*
+        int dividendo = num1;
+        int divisor = num2;
+        int resto = dividendo % divisor;
+        if (resto == 0) {
+            resultado = divisor;
+        } else {
+            dividendo = divisor;
+            divisor = resto;
+            resultado = mcdConRecursividad(dividendo, divisor);
+        }
+        return resultado;
+        */
     }
     
-    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el primer número");
+        int num1 = sc.nextInt();
+        System.out.println("Introduce el segundo número");
+        int num2 = sc.nextInt();
+        System.out.println("El mcd de " + num1 + " y " + num2 + " es: " + mcdConRecursividad(num1, num2));
+    }
 }
+
 
 
         

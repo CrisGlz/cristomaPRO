@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package dossier3;
 
@@ -8,9 +9,10 @@ import java.util.Scanner;
 
 /**
  *
- * @author Cristo Manuel Glez Delgado <xrizglz@gmail.com>
+ * @author Cris
  */
-public class Practica11 {
+public class Practica12 {
+    
     
      public static double calcularMedia(int array[]) {
         double suma = 0;

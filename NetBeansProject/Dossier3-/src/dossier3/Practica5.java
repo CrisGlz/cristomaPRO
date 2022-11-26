@@ -12,20 +12,19 @@ import java.util.Scanner;
  */
 public class Practica5 {
 
-    static int factorial(double numero) {
-        if (numero == 0) {
-            return 1;
-        } else {
-            return (int) (numero * factorial(numero - 1));
+   static double factorial(int numero1) {
+        double resultado = 1;
+        for (int i = 1; i <= numero1; i++) {
+            System.out.println(i);
+            resultado *= i;
         }
+        return resultado;
     }
-
-
-public static void main(String[] args) {
-       
-        Scanner sc = new Scanner (System.in);      
-        System.out.println("Dime el numeor del cual quieres obtener le factorial");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un número para que se te muestre el factorial de dicho número");
         int numero = sc.nextInt();
-        System.out.println("EL factorial es: "+ factorial(double numero));
+        
+        System.out.println(factorial(numero));
     }
 }
