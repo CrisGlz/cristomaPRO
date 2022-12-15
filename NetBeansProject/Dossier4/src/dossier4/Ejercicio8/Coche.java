@@ -14,6 +14,8 @@ public class Coche {
     private boolean encendido;
     private boolean frenoDeManoPuesto;
     private int poscicion;
+    private Escenario escenario;
+    
     
     
     public String arrancar(){
@@ -46,14 +48,56 @@ public class Coche {
     
 }
     
-   public Coche(String n, int pos){
+   public Coche(String n, int pos, Escenario escenario){
        
        nombre = n;
        poscicion = pos;
+       this.escenario = escenario;
+       this.escenario.addCoche(this);
    }
 
     public Coche() {
         
+    }
+    
+    public String moverDerecha(int pasos){
+        String respuesta = "";
+        if(encendido == false){
+            respuesta = "no se puede, arrancar primero";            
+        }else if(frenoDeManoPuesto){
+            encendido = false;
+            respuesta = "freno de mano puesto. Coche apagado";           
+        }else{
+            poscicion += pasos;
+           
+            this.escenario.haychoque(this);
+            this.escenario.reposicionarCoche(this);
+            respuesta = "ok coche se ha movido";
+        }
+        return respuesta;
+    }
+    
+    public String subirFrenoMano(){
+        String respuesta = "";
+        if( frenoDeManoPuesto ){
+            respuesta = "El freno estaba puesto";      
+        }else{
+            frenoDeManoPuesto = true;
+            respuesta = "ok freno puesto";
+        }
+        return respuesta;
+    }
+    
+        public String bajarFrenoMano(){
+        String respuesta = "";
+        if( frenoDeManoPuesto ){
+            frenoDeManoPuesto = false;
+            respuesta = "El freno estaba bajado";      
+        }else{
+         
+            respuesta = "ok freno bajado";
+        }
+        return respuesta;
     }
 
     /**
