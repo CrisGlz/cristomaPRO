@@ -12,10 +12,22 @@ import java.util.ArrayList;
  * @author dam
  */
 public class Main {
-    
-    ArrayList<String> arr = new ArrayLis<String>();
-    arr.add("H")
-    
-    
-    
+
+    public static void main(String[] args) {
+        ArrayList<String> arr = new ArrayList<String>();
+        arr.add("Hola");
+        arr.add("Buenos días");
+        arr.add("Adiós");
+
+        System.out.println(arr.get(1));
+
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+
+        }
+        for (String string : arr) {
+            System.out.println(string);
+        }
+    }
+
 }
