@@ -9,13 +9,6 @@ package dossier5;
  *
  * @author Cristo Manuel Glez Delgado
  */
-public class Dossier5 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public class Practica16 {
+    //a.[bB]+c.*
 }
