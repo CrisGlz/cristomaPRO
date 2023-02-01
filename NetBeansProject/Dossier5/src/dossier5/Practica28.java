@@ -7,7 +7,7 @@ package dossier5;
 
 /**
  *
- * @author Cristo Manuel Glez Delgado
+ * @author Cristo Manuel Glez Delgado 
  */
 class Telegrama {
     private String texto;
