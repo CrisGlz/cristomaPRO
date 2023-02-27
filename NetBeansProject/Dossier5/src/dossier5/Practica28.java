@@ -25,5 +25,5 @@ class Telegrama {
     public double coste() {
         return texto.length() * precioPalabra;
     }
-
+}
    
